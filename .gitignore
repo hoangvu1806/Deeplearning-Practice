@@ -1,0 +1,60 @@
+# Môi trường Python
+venv/
+env/
+.env/
+.venv/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Dữ liệu
+*.csv
+*.dat
+*.gz
+*.db
+*.sqlite
+*.h5
+datasets/
+data/
+raw_data/
+
+# Model đã train
+models/
+*.pt
+*.pth
+*.hdf5
+*.h5
+*.pkl
+*.model
+checkpoint/
+checkpoints/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Log
+*.log
+logs/
+tensorboard/
+runs/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Tệp tạm thời
+tmp/
+temp/ 
