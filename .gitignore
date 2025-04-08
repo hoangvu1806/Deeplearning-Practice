@@ -1,60 +1,87 @@
 # Môi trường Python
-venv/
-env/
-.env/
-.venv/
-ENV/
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
+venv/
+env/
+.env/
+.venv/
+ENV/
+.python-version
+pythonenv*
 
-# Dữ liệu
+# IDE và Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+.jupyter/
+jupyter_notebook_config.py
+
+# Dữ liệu và Dataset
+data/
+raw_data/
+datasets/
 *.csv
 *.dat
 *.gz
 *.db
 *.sqlite
 *.h5
-datasets/
-data/
-raw_data/
+*.npy
+*.npz
 
-# Model đã train
+# Model và Checkpoints
 models/
+checkpoints/
+runs/
 *.pt
 *.pth
+*.ckpt
 *.hdf5
 *.h5
 *.pkl
 *.model
-checkpoint/
-checkpoints/
+*.weights
+saved_models/
 
-# Jupyter Notebook
-.ipynb_checkpoints
-*.ipynb_checkpoints/
-*/.ipynb_checkpoints/*
-
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-.DS_Store
-
-# Log
-*.log
+# Logs và Output
 logs/
 tensorboard/
-runs/
+wandb/
+mlruns/
+*.log
+output/
+results/
 
-# Distribution / packaging
+# Distribution và Packaging
 dist/
 build/
 *.egg-info/
+*.egg
+MANIFEST
 
 # Tệp tạm thời
 tmp/
-temp/ 
+temp/
+.temp/
+*.tmp
+
+# Tệp cấu hình local
+config.local.yaml
+*.local.json
+.env.local
+
+# Thư viện và Dependencies
+node_modules/
+bower_components/
+jspm_packages/ 
