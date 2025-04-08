@@ -31,12 +31,6 @@ wheels/
 # PyCharm
 .idea/
 
-# Dataset và checkpoint - giữ thư mục, bỏ nội dung
-dataset/*
-!dataset/.gitkeep
-checkpoint/*
-!checkpoint/.gitkeep
-
 # Logs
 *.log
 logs/ 
