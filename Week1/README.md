@@ -56,7 +56,9 @@ python evaluate.py
 -   Mô hình được huấn luyện với nhiều bộ siêu tham số khác nhau
 -   Kết quả được lưu trong file `results.csv`
 -   Các biểu đồ đánh giá:
+
     -   `evaluation_samples.png`: Kết quả dự đoán trên 20 mẫu ngẫu nhiên
+
     -   `confusion_matrix_samples.png`: Ma trận nhầm lẫn trên mẫu
     -   `confusion_matrix_full.png`: Ma trận nhầm lẫn trên toàn bộ tập test
 
@@ -82,3 +84,31 @@ python evaluate.py
 ## Giấy phép
 
 MIT License
+
+# Week 1: Deep Learning Project
+
+## Kết quả đánh giá mô hình
+
+### 1. Ma trận nhầm lẫn (Confusion Matrix)
+
+<p align="center">
+  <img src="confusion_matrix_full.png" width="600" alt="Confusion Matrix Full">
+</p>
+
+### 2. Mẫu đánh giá
+
+Dưới đây là một số mẫu được chọn ngẫu nhiên từ tập test:
+
+<p align="center">
+  <img src="evaluation_samples.png" width="800" alt="Evaluation Samples">
+</p>
+
+### 3. Ma trận nhầm lẫn cho mẫu
+
+<p align="center">
+  <img src="confusion_matrix_samples.png" width="500" alt="Confusion Matrix Samples">
+</p>
+
+## Chi tiết kết quả
+
+Các kết quả chi tiết được lưu trong file `results.csv`. Để xem báo cáo đầy đủ, vui lòng tham khảo file `report.md`.

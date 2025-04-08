@@ -28,9 +28,6 @@ pythonenv*
 jupyter_notebook_config.py
 
 # Dữ liệu và Dataset
-data/
-raw_data/
-datasets/
 *.csv
 *.dat
 *.gz
@@ -42,7 +39,6 @@ datasets/
 
 # Model và Checkpoints
 models/
-checkpoints/
 runs/
 *.pt
 *.pth

@@ -85,9 +85,9 @@ Nhận xét:
 
 -   Xem file `confusion_matrix_full.png`
 -   Các chữ số dễ nhầm lẫn nhất:
-    -   4 và 9 (do cấu trúc tương tự phần trên)
-    -   3 và 8 (do đều có các đường cong)
-    -   5 và 3 (do đều có phần cong ở giữa)
+    -   4 và 9 (do cấu trúc tương tự phần dưới)
+    -   5 và 3 (do đều có phần cong ở cuối)
+    -   7 và 2 (do đều có các thanh chéo cao)
 
 ### 4.3. Ví dụ Dự đoán
 
