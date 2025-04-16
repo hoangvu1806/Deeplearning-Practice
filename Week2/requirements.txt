@@ -1,0 +1,11 @@
+torch
+torchtext
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+nltk
+pandas
+tqdm
+pickle5 
