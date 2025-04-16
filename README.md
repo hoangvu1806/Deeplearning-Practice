@@ -7,7 +7,7 @@ Kho lưu trữ này chứa mã nguồn của các bài tập trong khóa học D
 Dự án được tổ chức theo các tuần học:
 
 -   `Week1/`: Giới thiệu về Deep Learning
--   `Week2/`: ...
+-   `Week2/`: Xây dựng mô hình học sâu phân loại cảm xúc IMDb reviews.
 -   `Week3/`: ...
 -   (và các tuần tiếp theo)
 
