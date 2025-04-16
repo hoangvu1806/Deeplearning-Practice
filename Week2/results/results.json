@@ -1,0 +1,117 @@
+[
+  {
+    "config": {
+      "model_type": "LSTM",
+      "vocab_size": 15000,
+      "embedding_dim": 128,
+      "hidden_size": 64,
+      "num_layers": 1,
+      "output_size": 2,
+      "batch_size": 64,
+      "learning_rate": 0.001,
+      "optimizer_type": "adam",
+      "epochs": 10,
+      "data_path": "dataset/processed_data.pkl",
+      "device": "cuda"
+    },
+    "accuracies": [
+      0.8646,
+      0.8642,
+      0.8532
+    ],
+    "mean_acc": 0.8606666666666666,
+    "std_acc": 0.005282255410544103
+  },
+  {
+    "config": {
+      "model_type": "RNN",
+      "vocab_size": 15000,
+      "embedding_dim": 128,
+      "hidden_size": 128,
+      "num_layers": 1,
+      "output_size": 2,
+      "batch_size": 32,
+      "learning_rate": 0.003,
+      "optimizer_type": "rmsprop",
+      "epochs": 10,
+      "data_path": "dataset/processed_data.pkl",
+      "device": "cuda"
+    },
+    "accuracies": [
+      0.7998,
+      0.795,
+      0.7876
+    ],
+    "mean_acc": 0.7941333333333334,
+    "std_acc": 0.005018189137749016
+  },
+  {
+    "config": {
+      "model_type": "LSTM",
+      "vocab_size": 15000,
+      "embedding_dim": 128,
+      "hidden_size": 64,
+      "num_layers": 2,
+      "output_size": 2,
+      "batch_size": 64,
+      "learning_rate": 0.001,
+      "optimizer_type": "adamw",
+      "epochs": 10,
+      "data_path": "dataset/processed_data.pkl",
+      "device": "cuda"
+    },
+    "accuracies": [
+      0.8596,
+      0.8652,
+      0.8706
+    ],
+    "mean_acc": 0.8651333333333334,
+    "std_acc": 0.004490978611493148
+  },
+  {
+    "config": {
+      "model_type": "RNN",
+      "vocab_size": 15000,
+      "embedding_dim": 128,
+      "hidden_size": 32,
+      "num_layers": 4,
+      "output_size": 2,
+      "batch_size": 64,
+      "learning_rate": 0.01,
+      "optimizer_type": "adamw",
+      "epochs": 10,
+      "data_path": "dataset/processed_data.pkl",
+      "device": "cuda"
+    },
+    "accuracies": [
+      0.7472,
+      0.5222,
+      0.7068
+    ],
+    "mean_acc": 0.6587333333333333,
+    "std_acc": 0.09794234131478693
+  },
+  {
+    "config": {
+      "model_type": "LSTM",
+      "vocab_size": 15000,
+      "embedding_dim": 128,
+      "hidden_size": 64,
+      "num_layers": 2,
+      "output_size": 2,
+      "batch_size": 128,
+      "learning_rate": 0.002,
+      "optimizer_type": "nadam",
+      "epochs": 10,
+      "data_path": "dataset/processed_data.pkl",
+      "device": "cuda"
+    },
+    "accuracies": [
+      0.8642,
+      0.8702,
+      0.865
+    ],
+    "mean_acc": 0.8664666666666667,
+    "std_acc": 0.002659991645767999
+  }
+]
