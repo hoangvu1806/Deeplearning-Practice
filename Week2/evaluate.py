@@ -13,7 +13,6 @@ import re
 from nltk.tokenize import word_tokenize
 import nltk
 
-# Đảm bảo nltk đã tải các gói cần thiết
 try:
     nltk.data.find('tokenizers/punkt')
 except LookupError:
@@ -33,7 +32,6 @@ def plot_accuracy_comparison(results):
     bars = ax.bar(range(len(mean_accs)), mean_accs, yerr=std_accs, 
                   capsize=10, alpha=0.7, color=['blue' if m == 'LSTM' else 'green' for m in model_types])
     
-    # Thêm nhãn cho mỗi cột
     config_labels = []
     for r in results:
         config = r["config"]
@@ -43,7 +41,6 @@ def plot_accuracy_comparison(results):
     ax.set_xticks(range(len(mean_accs)))
     ax.set_xticklabels(config_labels, rotation=0)
     
-    # Thêm các giá trị cụ thể
     for i, bar in enumerate(bars):
         height = bar.get_height()
         ax.text(bar.get_x() + bar.get_width()/2., height + 0.01,
@@ -59,14 +56,12 @@ def plot_accuracy_comparison(results):
     plt.close()
 
 def plot_model_type_comparison(results):
-    # Tách kết quả theo loại mô hình
     lstm_results = [r for r in results if r["config"]["model_type"] == "LSTM"]
     rnn_results = [r for r in results if r["config"]["model_type"] == "RNN"]
     
     lstm_accs = [r["mean_acc"] for r in lstm_results]
     rnn_accs = [r["mean_acc"] for r in rnn_results]
     
-    # Tính trung bình và độ lệch chuẩn cho từng loại mô hình
     lstm_mean = np.mean(lstm_accs)
     rnn_mean = np.mean(rnn_accs)
     lstm_std = np.std(lstm_accs)
@@ -76,7 +71,6 @@ def plot_model_type_comparison(results):
     bars = ax.bar(['LSTM', 'RNN'], [lstm_mean, rnn_mean], yerr=[lstm_std, rnn_std], 
                   capsize=10, alpha=0.7, color=['blue', 'green'])
     
-    # Thêm giá trị lên từng cột
     for bar in bars:
         height = bar.get_height()
         ax.text(bar.get_x() + bar.get_width()/2., height + 0.01,
@@ -94,7 +88,6 @@ def plot_model_type_comparison(results):
 def load_model_and_evaluate(model_path, config, data_path="dataset/processed_data.pkl"):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
-    # Tải dữ liệu
     with open(data_path, "rb") as f:
         data = pickle.load(f)
     
@@ -103,34 +96,28 @@ def load_model_and_evaluate(model_path, config, data_path="dataset/processed_dat
     vocab_dict = data["vocab"]
     pad_idx = vocab_dict["<pad>"]
     
-    # Lấy dữ liệu kiểm thử
     TRAIN_SIZE = 25000
     TEST_SIZE = 5000
     test_texts = texts[TRAIN_SIZE:TRAIN_SIZE + TEST_SIZE]
     test_labels = labels[TRAIN_SIZE:TRAIN_SIZE + TEST_SIZE]
     
-    # Tạo dataset và dataloader
     test_dataset = TensorDataset(test_texts, test_labels)
     test_loader = DataLoader(test_dataset, batch_size=64, shuffle=False)
     
-    # Tạo mô hình tương ứng
     if config["model_type"] == "RNN":
         model = RNN(
             config["vocab_size"], config["embedding_dim"], config["hidden_size"], 
             config["num_layers"], config["output_size"], pad_idx
         )
-    else:  # LSTM
         model = LSTM(
             config["vocab_size"], config["embedding_dim"], config["hidden_size"], 
             config["num_layers"], config["output_size"], pad_idx
         )
     
-    # Tải trọng số đã lưu
     model.load_state_dict(torch.load(model_path, map_location=device))
     model.to(device)
     model.eval()
     
-    # Đánh giá mô hình
     criterion = nn.CrossEntropyLoss()
     
     all_preds = []
@@ -158,7 +145,6 @@ def load_model_and_evaluate(model_path, config, data_path="dataset/processed_dat
     
     print(f"Model: {config['model_type']}, Test Accuracy: {test_acc:.4f}, Test Loss: {test_loss:.4f}")
     
-    # Confusion matrix
     cm = confusion_matrix(all_labels, all_preds)
     plt.figure(figsize=(8, 6))
     sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', 
@@ -171,7 +157,6 @@ def load_model_and_evaluate(model_path, config, data_path="dataset/processed_dat
     plt.savefig(f'results/confusion_matrix_{config["model_type"]}.png', dpi=300)
     plt.close()
     
-    # Classification report
     report = classification_report(all_labels, all_preds, 
                                    target_names=['Tiêu cực', 'Tích cực'],
                                    output_dict=True)
@@ -179,7 +164,6 @@ def load_model_and_evaluate(model_path, config, data_path="dataset/processed_dat
     return test_acc, test_loss, report
 
 def plot_hyperparameter_effects(results):
-    # Phân tích ảnh hưởng của batch_size
     batch_sizes = [r["config"]["batch_size"] for r in results]
     accuracies = [r["mean_acc"] for r in results]
     model_types = [r["config"]["model_type"] for r in results]
@@ -200,7 +184,6 @@ def plot_hyperparameter_effects(results):
     plt.savefig('results/batch_size_effect.png', dpi=300)
     plt.close()
     
-    # Phân tích ảnh hưởng của số lớp ẩn
     num_layers = [r["config"]["num_layers"] for r in results]
     
     plt.figure(figsize=(10, 6))
@@ -219,7 +202,6 @@ def plot_hyperparameter_effects(results):
     plt.savefig('results/num_layers_effect.png', dpi=300)
     plt.close()
     
-    # Phân tích ảnh hưởng của optimizer
     optimizers = [r["config"]["optimizer_type"] for r in results]
     unique_optimizers = list(set(optimizers))
     
@@ -267,40 +249,32 @@ def plot_hyperparameter_effects(results):
 def test_user_input(model_path, config, vocab_dict, pad_idx, max_len=500):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
-    # Tạo mô hình tương ứng
     if config["model_type"] == "RNN":
         model = RNN(
             config["vocab_size"], config["embedding_dim"], config["hidden_size"], 
             config["num_layers"], config["output_size"], pad_idx
         )
-    else:  # LSTM
         model = LSTM(
             config["vocab_size"], config["embedding_dim"], config["hidden_size"], 
             config["num_layers"], config["output_size"], pad_idx
         )
     
-    # Tải trọng số đã lưu
     model.load_state_dict(torch.load(model_path, map_location=device))
     model.to(device)
     model.eval()
     
-    # Hàm tiền xử lý văn bản
+
     def preprocess_text(text):
-        # Chuyển về chữ thường
         text = text.lower()
-        # Loại bỏ ký tự đặc biệt và giữ lại khoảng trắng
         text = re.sub(r'[^\w\s]', '', text)
-        # Tokenize
         tokens = word_tokenize(text)
-        # Chuyển thành indices
         indices = []
         for token in tokens:
             if token in vocab_dict:
                 indices.append(vocab_dict[token])
             else:
                 indices.append(vocab_dict["<unk>"])
-        
-        # Padding/truncating
+
         if len(indices) > max_len:
             indices = indices[:max_len]
         else:
@@ -316,17 +290,14 @@ def test_user_input(model_path, config, vocab_dict, pad_idx, max_len=500):
         if user_input.lower() == 'q':
             break
         
-        # Tiền xử lý văn bản nhập vào
         input_tensor = preprocess_text(user_input).to(device)
         
-        # Dự đoán
         with torch.no_grad():
             output = model(input_tensor)
             probabilities = torch.nn.functional.softmax(output, dim=1)
             prediction = torch.argmax(output, dim=1).item()
             confidence = probabilities[0][prediction].item()
-        
-        # Hiển thị kết quả
+
         sentiment = "TÍCH CỰC" if prediction == 1 else "TIÊU CỰC"
         print(f"Phân loại: {sentiment} (độ tin cậy: {confidence:.2%})")
 
@@ -336,22 +307,16 @@ def load_vocab_dict(data_path="dataset/processed_data.pkl"):
     return data["vocab"], data["vocab"]["<pad>"]
 
 def main():
-    # Đảm bảo thư mục kết quả tồn tại
     os.makedirs("results", exist_ok=True)
     
-    # Tải kết quả
     results = load_results()
     
-    # Vẽ đồ thị so sánh độ chính xác
     plot_accuracy_comparison(results)
     
-    # So sánh hiệu suất giữa RNN và LSTM
     plot_model_type_comparison(results)
     
-    # Phân tích ảnh hưởng của siêu tham số
     plot_hyperparameter_effects(results)
     
-    # Tìm cấu hình tốt nhất cho RNN và LSTM
     best_lstm = max([r for r in results if r["config"]["model_type"] == "LSTM"], 
                     key=lambda x: x["mean_acc"])
     best_rnn = max([r for r in results if r["config"]["model_type"] == "RNN"], 
@@ -365,7 +330,6 @@ def main():
     print(json.dumps(best_rnn["config"], indent=2))
     print(f"Độ chính xác trung bình: {best_rnn['mean_acc']:.4f}")
     
-    # Đánh giá chi tiết mô hình tốt nhất
     print("\nĐánh giá mô hình LSTM tốt nhất:")
     lstm_config = best_lstm["config"]
     lstm_model_path = f"checkpoint/best_LSTM_{lstm_config['num_layers']}_{lstm_config['hidden_size']}_{lstm_config['optimizer_type']}.pth"
@@ -390,12 +354,10 @@ def main():
     else:
         print(f"Không tìm thấy file checkpoint: {rnn_model_path}")
     
-    # Thêm chức năng kiểm tra đánh giá người dùng
     print("\nBạn muốn thử đánh giá phim với mô hình? (y/n): ")
     user_choice = input().lower()
     if user_choice == 'y':
         vocab_dict, pad_idx = load_vocab_dict()
-        # Sử dụng mô hình LSTM mặc định vì thường hiệu quả hơn
         if os.path.exists(lstm_model_path):
             test_user_input(lstm_model_path, lstm_config, vocab_dict, pad_idx)
         elif os.path.exists(rnn_model_path):
