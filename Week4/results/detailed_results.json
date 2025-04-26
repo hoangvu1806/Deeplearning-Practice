@@ -1,0 +1,137 @@
+[
+    {
+        "config_name": "config_1",
+        "run_id": 1,
+        "test_loss": 0.37044513365801646,
+        "test_accuracy": 0.8970588235294118,
+        "test_f1": 0.8927407998686807,
+        "training_time": 0.6967912236849467,
+        "best_epoch": 4
+    },
+    {
+        "config_name": "config_1",
+        "run_id": 2,
+        "test_loss": 0.3163161204141729,
+        "test_accuracy": 0.8852941176470588,
+        "test_f1": 0.8770368011664144,
+        "training_time": 0.7426422675450642,
+        "best_epoch": 3
+    },
+    {
+        "config_name": "config_1",
+        "run_id": 3,
+        "test_loss": 0.39593705289504105,
+        "test_accuracy": 0.888235294117647,
+        "test_f1": 0.8793564639082952,
+        "training_time": 0.8517398834228516,
+        "best_epoch": 4
+    },
+    {
+        "config_name": "config_2",
+        "run_id": 1,
+        "test_loss": 0.363313249279471,
+        "test_accuracy": 0.9205882352941176,
+        "test_f1": 0.9168056794646117,
+        "training_time": 3.668353815873464,
+        "best_epoch": 7
+    },
+    {
+        "config_name": "config_2",
+        "run_id": 2,
+        "test_loss": 0.33002277682809267,
+        "test_accuracy": 0.9147058823529411,
+        "test_f1": 0.9111874337491793,
+        "training_time": 3.0481557051340737,
+        "best_epoch": 4
+    },
+    {
+        "config_name": "config_2",
+        "run_id": 3,
+        "test_loss": 0.35139458354781655,
+        "test_accuracy": 0.9058823529411765,
+        "test_f1": 0.8999961623433873,
+        "training_time": 3.624097235997518,
+        "best_epoch": 4
+    },
+    {
+        "config_name": "config_3",
+        "run_id": 1,
+        "test_loss": 0.22748806169804406,
+        "test_accuracy": 0.9294117647058824,
+        "test_f1": 0.9229363503431589,
+        "training_time": 0.9220446825027466,
+        "best_epoch": 1
+    },
+    {
+        "config_name": "config_3",
+        "run_id": 2,
+        "test_loss": 0.21040781258660204,
+        "test_accuracy": 0.9382352941176471,
+        "test_f1": 0.9336766327454935,
+        "training_time": 0.9262909650802612,
+        "best_epoch": 2
+    },
+    {
+        "config_name": "config_3",
+        "run_id": 3,
+        "test_loss": 0.35699838066802303,
+        "test_accuracy": 0.9117647058823529,
+        "test_f1": 0.9070374122169955,
+        "training_time": 1.0657214522361755,
+        "best_epoch": 2
+    },
+    {
+        "config_name": "config_4",
+        "run_id": 1,
+        "test_loss": 0.31531070534085087,
+        "test_accuracy": 0.9147058823529411,
+        "test_f1": 0.9112065048025911,
+        "training_time": 1.0948898792266846,
+        "best_epoch": 2
+    },
+    {
+        "config_name": "config_4",
+        "run_id": 2,
+        "test_loss": 0.33808994291917127,
+        "test_accuracy": 0.9294117647058824,
+        "test_f1": 0.9245375404134102,
+        "training_time": 1.0803611596425375,
+        "best_epoch": 5
+    },
+    {
+        "config_name": "config_4",
+        "run_id": 3,
+        "test_loss": 0.2533098769973388,
+        "test_accuracy": 0.9441176470588235,
+        "test_f1": 0.9388330266889502,
+        "training_time": 1.1131901582082113,
+        "best_epoch": 9
+    },
+    {
+        "config_name": "config_5",
+        "run_id": 1,
+        "test_loss": 0.32777579321580774,
+        "test_accuracy": 0.9176470588235294,
+        "test_f1": 0.9151559573599443,
+        "training_time": 0.9513105193773905,
+        "best_epoch": 4
+    },
+    {
+        "config_name": "config_5",
+        "run_id": 2,
+        "test_loss": 0.3515707582235336,
+        "test_accuracy": 0.9088235294117647,
+        "test_f1": 0.900216678766847,
+        "training_time": 0.8695202390352885,
+        "best_epoch": 3
+    },
+    {
+        "config_name": "config_5",
+        "run_id": 3,
+        "test_loss": 0.38048867127474617,
+        "test_accuracy": 0.8852941176470588,
+        "test_f1": 0.8808812996846912,
+        "training_time": 0.8131372332572937,
+        "best_epoch": 4
+    }
+]

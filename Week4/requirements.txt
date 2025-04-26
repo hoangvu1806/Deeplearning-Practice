@@ -1,0 +1,9 @@
+torch
+numpy
+matplotlib
+scikit-learn
+tqdm
+underthesea
+seaborn
+pyvi
+wandb

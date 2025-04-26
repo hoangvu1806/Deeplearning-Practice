@@ -1,0 +1,6 @@
+{
+    "train_size": 2385,
+    "val_size": 681,
+    "test_size": 340,
+    "vocab_size": 33265
+}

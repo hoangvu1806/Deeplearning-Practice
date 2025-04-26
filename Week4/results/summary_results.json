@@ -1,0 +1,112 @@
+[
+    {
+        "config_name": "config_1",
+        "description": "Baseline",
+        "avg_test_loss": 0.3608994356557435,
+        "std_test_loss": 0.03319852893371121,
+        "avg_test_accuracy": 0.8901960784313725,
+        "std_test_accuracy": 0.004999038738816489,
+        "avg_test_f1": 0.8830446883144635,
+        "std_test_f1": 0.006921278459113695,
+        "avg_test_error": 0.10980392156862746,
+        "std_test_error": 0.004999038738816489,
+        "params": {
+            "hidden_dim": 128,
+            "attention_dim": 64,
+            "embedding_dim": 300,
+            "num_layers": 2,
+            "batch_size": 32,
+            "dropout": 0.5,
+            "learning_rate": 0.001,
+            "optimizer": "adam"
+        }
+    },
+    {
+        "config_name": "config_2",
+        "description": "Larger model",
+        "avg_test_loss": 0.34824353655179335,
+        "std_test_loss": 0.013772211439159045,
+        "avg_test_accuracy": 0.9137254901960784,
+        "std_test_accuracy": 0.006043543140165641,
+        "avg_test_f1": 0.9093297585190595,
+        "std_test_f1": 0.006987044411272168,
+        "avg_test_error": 0.0862745098039216,
+        "std_test_error": 0.006043543140165641,
+        "params": {
+            "hidden_dim": 256,
+            "attention_dim": 128,
+            "embedding_dim": 512,
+            "num_layers": 3,
+            "batch_size": 32,
+            "dropout": 0.4,
+            "learning_rate": 0.001,
+            "optimizer": "adamw"
+        }
+    },
+    {
+        "config_name": "config_3",
+        "description": "Different learning rate and optimizer",
+        "avg_test_loss": 0.26496475165088973,
+        "std_test_loss": 0.06545011016020635,
+        "avg_test_accuracy": 0.926470588235294,
+        "std_test_accuracy": 0.011004874666982191,
+        "avg_test_f1": 0.921216798435216,
+        "std_test_f1": 0.01094317631112557,
+        "avg_test_error": 0.07352941176470588,
+        "std_test_error": 0.01100487466698219,
+        "params": {
+            "hidden_dim": 128,
+            "attention_dim": 64,
+            "embedding_dim": 300,
+            "num_layers": 2,
+            "batch_size": 16,
+            "dropout": 0.3,
+            "learning_rate": 0.003,
+            "optimizer": "rmsprop"
+        }
+    },
+    {
+        "config_name": "config_4",
+        "description": "Small batches with high learning rate",
+        "avg_test_loss": 0.30223684175245363,
+        "std_test_loss": 0.035824659349611675,
+        "avg_test_accuracy": 0.9294117647058823,
+        "std_test_accuracy": 0.012007302660701857,
+        "avg_test_f1": 0.9248590239683171,
+        "std_test_f1": 0.011280771003243402,
+        "avg_test_error": 0.07058823529411766,
+        "std_test_error": 0.012007302660701855,
+        "params": {
+            "hidden_dim": 128,
+            "attention_dim": 64,
+            "embedding_dim": 300,
+            "num_layers": 2,
+            "batch_size": 8,
+            "dropout": 0.3,
+            "learning_rate": 0.01,
+            "optimizer": "adam"
+        }
+    },
+    {
+        "config_name": "config_5",
+        "description": "Fewer layers with larger embeddings",
+        "avg_test_loss": 0.3532784075713625,
+        "std_test_loss": 0.021553792056704445,
+        "avg_test_accuracy": 0.903921568627451,
+        "std_test_accuracy": 0.013655282624690315,
+        "avg_test_f1": 0.8987513119371608,
+        "std_test_f1": 0.014030882952689382,
+        "avg_test_error": 0.09607843137254905,
+        "std_test_error": 0.013655282624690316,
+        "params": {
+            "hidden_dim": 128,
+            "attention_dim": 128,
+            "embedding_dim": 512,
+            "num_layers": 2,
+            "batch_size": 32,
+            "dropout": 0.2,
+            "learning_rate": 0.001,
+            "optimizer": "nadam"
+        }
+    }
+]
