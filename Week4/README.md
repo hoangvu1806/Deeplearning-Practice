@@ -70,50 +70,20 @@ Dự án này xây dựng và đánh giá một mô hình học sâu sử dụng
 
 ## Cài đặt
 
-1.  **Clone repository:**
-
-    ```bash
-    git clone <your-repository-url>
-    cd <repository-name>
-    ```
-
-2.  **Tạo môi trường ảo (khuyến nghị):**
-
-    ```bash
-    python -m venv venv
-    # Windows
-    venv\Scripts\activate
-    # macOS/Linux
-    source venv/bin/activate
-    ```
-
-3.  **Cài đặt thư viện:**
+1.  **Cài đặt thư viện:**
 
     ```bash
     pip install -r requirements.txt
     ```
 
-4.  **Chuẩn bị dữ liệu:**
+2.  **Chuẩn bị dữ liệu:**
 
-    -   Tạo thư mục `data/news/`.
-    -   Trong `data/news/`, tạo các thư mục con tương ứng với từng chủ đề (ví dụ: `the-thao`, `phap-luat`, `giao-duc`,...).
-    -   Đặt các file `.txt` chứa nội dung bài báo vào các thư mục chủ đề tương ứng.
-    -   Tạo file `data/mapping_data.json` theo định dạng sau, liệt kê đường dẫn tương đối đến từng file và nhãn (tên thư mục) của nó:
-        ```json
-        [
-            {
-                "file_path": "data/news/the-thao/article1.txt",
-                "category": "the-thao"
-            },
-            {
-                "file_path": "data/news/phap-luat/article2.txt",
-                "category": "phap-luat"
-            }
-            // ... thêm các file khác
-        ]
-        ```
+    - Chạy file **types_crawler.py** để tự động crawl các bài báo theo chuyên mục từ trang **VnExpress.net**
+    ```bash
+    python types_crawler.py --categories --pages 17 --output data
+    ``` 
 
-5.  **Đăng nhập Weights & Biases:**
+3.  **Đăng nhập Weights & Biases:**
     -   Nếu bạn chưa có tài khoản, đăng ký tại [https://wandb.ai/](https://wandb.ai/).
     -   Chạy lệnh sau và làm theo hướng dẫn để đăng nhập (cần thiết cho `main.py`):
         ```bash
