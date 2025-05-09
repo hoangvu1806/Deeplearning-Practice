@@ -9,7 +9,8 @@ Dự án được tổ chức theo các tuần học:
 -   `Week1/`: Giới thiệu về Deep Learning
 -   `Week2/`: Xây dựng mô hình học sâu phân loại cảm xúc IMDb reviews.
 -   `Week3/`: Dự đoán giá nhà ở California dựa trên bộ dữ liệu California Housing, logging chi tiết quá trình training.
--   `Week4/`: ...
+-   `Week4/`: Phân loại các bài báo Tiếng Việt với LSTM + Attention.
+-   `Week5/`: Phân loại ảnh CIFAR-10 với CNN và ResNet-20
 -   (và các tuần tiếp theo)
 
 ## Cách Sử Dụng
