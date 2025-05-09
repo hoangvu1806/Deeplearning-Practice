@@ -1,0 +1,10 @@
+torch
+torchvision
+numpy
+matplotlib
+tqdm
+wandb
+streamlit
+pillow
+seaborn
+pandas
