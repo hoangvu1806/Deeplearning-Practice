@@ -28,7 +28,7 @@ pythonenv*
 jupyter_notebook_config.py
 
 # Dữ liệu và Dataset
-*.csv
+# *.csv
 *.dat
 *.gz
 *.db
@@ -38,17 +38,18 @@ jupyter_notebook_config.py
 *.npz
 
 # Model và Checkpoints
-models/
+# models/
 runs/
 *.pt
-*.pth
+# *.pth
 *.ckpt
 *.hdf5
 *.h5
-*.pkl
+# *.pkl
 *.model
 *.weights
-saved_models/
+# saved_models/
+Week6/models/
 
 # Logs và Output
 logs/
@@ -57,7 +58,8 @@ wandb/
 mlruns/
 *.log
 output/
-results/
+experiments/
+# results/
 
 # Distribution và Packaging
 dist/
@@ -80,4 +82,12 @@ config.local.yaml
 # Thư viện và Dependencies
 node_modules/
 bower_components/
-jspm_packages/ 
+jspm_packages/
+
+# Ignore all .txt files
+
+
+# But keep requirements.txt
+!requirements.txt 
+!test.txt
+!stopwords.txt
