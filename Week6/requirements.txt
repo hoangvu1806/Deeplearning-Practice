@@ -1,0 +1,14 @@
+torch
+torchtext
+numpy
+matplotlib
+streamlit
+transformers
+tqdm
+nltk
+packaging
+sacrebleu
+sentencepiece
+protobuf
+scikit-learn
+pandas

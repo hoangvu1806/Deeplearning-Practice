@@ -1,0 +1,47 @@
+RNN Model Results
+================
+
+Config: RNN_Config_1
+Final Training Loss: 1.0864
+Final Validation Loss: 1.9891
+Final BLEU Score: 32.55
+Best Validation Loss: 1.9698
+Average Epoch Time: 119.84s
+
+Config: RNN_Config_2
+Final Training Loss: 0.9428
+Final Validation Loss: 2.0275
+Final BLEU Score: 31.56
+Best Validation Loss: 2.0060
+Average Epoch Time: 74.95s
+
+Config: RNN_Config_3
+Final Training Loss: 5.4961
+Final Validation Loss: 5.4858
+Final BLEU Score: 0.17
+Best Validation Loss: 5.4858
+Average Epoch Time: 134.39s
+
+Config: RNN_Config_4
+Final Training Loss: 1.4006
+Final Validation Loss: 2.0308
+Final BLEU Score: 34.10
+Best Validation Loss: 2.0125
+Average Epoch Time: 75.03s
+
+Config: RNN_Config_5
+Final Training Loss: 1.8476
+Final Validation Loss: 2.2348
+Final BLEU Score: 22.82
+Best Validation Loss: 2.2348
+Average Epoch Time: 131.39s
+
+Overall Statistics
+===================
+
+Mean Training Loss: 2.1547 ± 1.8998
+Mean Validation Loss: 2.7536 ± 1.5304
+Mean BLEU Score: 24.24 ± 14.15
+Mean Epoch Time: 107.12s ± 29.83s
+
+Best Model: RNN_Config_4 with BLEU Score: 34.10
